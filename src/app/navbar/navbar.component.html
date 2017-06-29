@@ -1,0 +1,29 @@
+<div class="navbar" style= "background-color: black; margin-top: 10px; width:100%">
+      	  	<form class="form-inline b1" #userData="ngForm" action="" (ngSubmit)="onSubmit(userData.value)" style=" color: white;">
+				    <div class="form-group">
+				      <label for="email">Email:</label>
+				      <input type="email" class="form-control" #email="ngModel" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" placeholder="Enter email" name="email" required ngModel>
+							<div *ngIf="email.errors && (email.dirty || email.touched)" class="alert alert-danger" >
+								<div [hidden]="!email.errors.required">
+									Please enter an email
+								</div>
+								<div [hidden]="!email.errors.pattern">
+									Please enter a valid email
+								</div>
+							</div>
+				    </div>
+				    <div class="form-group">
+				      <label for="pwd">Password:</label>
+				      <input type="password" class="form-control" #pwd="ngModel" placeholder="Enter password" name="pwd" required ngModel>
+							<div *ngIf="pwd.errors && (pwd.dirty || pwd.touched)" class="alert alert-danger" >
+								<div [hidden]="!pwd.errors.required">
+									Please enter a name
+								</div>
+							</div>
+				    </div>
+				    <div class="checkbox">
+				      <label><input type="checkbox" name="remember"> Remember me</label>
+				    </div>
+				    <button type="submit" [disabled]="!userData.form.valid" class="btn btn-default">Login</button>
+			      </form>
+</div>

@@ -1,0 +1,51 @@
+<div class="row">
+		    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+		       <p class="txt">If it doesn't<br> open...<br>it's not your<br> door!</p>
+		    </div>
+			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="padding: 5%;">
+			   <form class="form-inline b1" #userForm="ngForm" name="myForm" action="" (ngSubmit)="onSubmit(userForm.value)"  method="post" style="color: white;font-size: 25px; font-family:  'Vibur', cursive;" novalidate>
+		        <div class="form">
+		        <label for="name">Name:</label><br>
+		        <input name ="name" type="name" class="form-control" #name="ngModel" placeholder="Enter name" required ngModel><br>
+				<div *ngIf="name.errors && (name.dirty || name.touched)" class="alert alert-danger" >
+					<div [hidden]="!name.errors.required">
+						Please enter a name
+					</div>
+				</div>
+		        </div>
+		        <div class="form">
+		        <label for="phone_no">Phone No:</label><br>
+		        <input name ="ph_no" type="name" class="form-control" #phno="ngModel" placeholder="Enter phone no" required ngModel><br>
+				<div *ngIf="phno.errors && (phno.dirty || phno.touched)" class="alert alert-danger" >
+					<div [hidden]="!phno.errors.required">
+						Please enter a phone number
+					</div>
+				</div>
+		        </div>
+		        <div class="form">
+		        <label for="email">Email:</label><br>
+		        <input name ="email" type="email" class="form-control" #email="ngModel" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" placeholder="Enter email" required ngModel><br>
+				<div *ngIf="email.errors && (email.dirty || email.touched)" class="alert alert-danger" >
+					<div [hidden]="!email.errors.required">
+						Please enter an email
+					</div>
+					<div [hidden]="!email.errors.pattern">
+						Please enter a valid email
+					</div>
+				</div>
+		        </div>
+		        <div class="form">
+		        <label for="password">Password:</label><br>
+		        <input name ="password" type="password" class="form-control" #pwd="ngModel" placeholder="Enter password" required ngModel><br>
+				<div *ngIf="pwd.errors && (pwd.dirty || pwd.touched)" class="alert alert-danger" >
+					<div [hidden]="!pwd.errors.required">
+						Please enter a name
+					</div>
+				</div>
+		        </div><br>
+		        <div class="form">
+		        <button [disabled]="!userForm.form.valid" type="submit" class="btn btn-default" name="signup">Sign Up</button>
+		        </div>
+		        </form>
+			</div>
+</div>

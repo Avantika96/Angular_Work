@@ -1,0 +1,33 @@
+.form-inline.b1
+{
+	float: right;
+	width: 80%;
+}
+.form-control
+{
+	width: 100%;
+}
+.alert.alert-danger
+{
+	height:30px;
+	padding: 0px;
+	font-size: 20px;
+}
+.txt
+{
+	font-family: 'Indie Flower', cursive;
+	font-size: 50px;
+	color: white;
+	text-align: center;
+	margin-top: 60px;
+}
+input.ng-invalid
+{
+	border-left: 5px solid red;
+
+}
+input.ng-valid
+{
+	border-left: 5px solid green;
+
+}

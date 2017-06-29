@@ -1,0 +1,23 @@
+#nav
+{
+	border-color: black;
+	border-width: 1px;
+	width: 100%;
+}
+.form-inline.b1
+{
+	float: right;
+	font-family: 'Indie Flower', cursive;
+	font-size: 25px;
+	color: white;
+}
+input.ng-invalid
+{
+	border-left: 5px solid red;
+
+}
+input.ng-valid
+{
+	border-left: 5px solid green;
+
+}
